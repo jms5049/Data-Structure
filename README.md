@@ -2,4 +2,8 @@
 
 ### File Input and Output
 
-Manage Contact Book using File I/O
+Manage Contact Book Using File I/O
+
+### Simple Binary Search
+
+Test Performance with Linear and Binary Search
