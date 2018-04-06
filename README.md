@@ -15,3 +15,11 @@ Read Phone Book and make it as Linked List
 ### Linked List Example
 
 Basic Skills using Linked List
+
+### Transform Infix Postfix
+
+Transform a simple given fomula into postfix using stack
+
+### Array Queue and Signle Linked Queue
+
+Implement Queue usisng array and single linked list
