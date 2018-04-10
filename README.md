@@ -23,3 +23,7 @@ Transform a simple given fomula into postfix using stack
 ### Array Queue and Signle Linked Queue
 
 Implement Queue usisng array and single linked list
+
+### Doublelinked List
+
+Adding prev and next keys to the nodes in order to maintain
