@@ -27,3 +27,7 @@ Implement Queue usisng array and single linked list
 ### Doublelinked List
 
 Adding prev and next keys to the nodes in order to maintain
+
+### Single Linked List Performance Test
+
+Set datas with exponetial random amount and test
