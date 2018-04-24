@@ -1,10 +1,9 @@
 public class ArrayQueue implements Queue {
-	Object queue[]; // queue에 사용할 배열
-	int size; // queue에 저장된 원소의 개수
-	int queueSize; // queue의 크기
+	Object queue[];
+	int size;
+	int queueSize;
 
-	public ArrayQueue(int queueSize) { // 생성자
-		// queue 초기화
+	public ArrayQueue(int queueSize) {
 		this.queue = new Object[queueSize];
 		this.queueSize = queueSize;
 		this.size = 0;
@@ -16,10 +15,10 @@ public class ArrayQueue implements Queue {
 		queue[size] = object;
 		size++;
 
-		if (size > queueSize) { // 원소의 개수가 배열의 크기보다 클때
+		if (size > queueSize) { 
 			System.out.println("Array Queue is Full! RESIZE");
 		}
-		if (size == queueSize) { // 원소의 개수가 배열의 크기와 같을때 
+		if (size == queueSize) { 
 
 			resize();
 		} else {
@@ -32,7 +31,6 @@ public class ArrayQueue implements Queue {
 	public Object first() {
 		// TODO Auto-generated method stub
 
-		// 배열의 첫 원소
 		return queue[0];
 	}
 
