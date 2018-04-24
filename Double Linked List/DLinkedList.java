@@ -12,12 +12,12 @@ public class DLinkedList {
 		} else {
 			Node p = head;
 			for (p = head; p != null; p = p.next) {
-				if (x <= (int) p.next.object) { // 넣으려는 자리 값보다 작을때
-					p.next = p.next.prev = new Node(x, p, p.next); // 한칸 앞에 끼어넣음
+				if (x <= (int) p.next.object) {
+					p.next = p.next.prev = new Node(x, p, p.next);
 					break;
-				} else if (p.next.next == head) { // 그전 숫자들보다 커서 맨 마지막에 들어가야할떄
-					p = p.next; // p.next.next로 두번이동을 하엿기 떄문에 p를 p.next로 한칸 전진후에
-					head.prev = p.next = new Node(x, p, p.next); // 맨 끝에 붙임
+				} else if (p.next.next == head) {
+					p = p.next; 
+					head.prev = p.next = new Node(x, p, p.next); 
 					break;
 
 				}
@@ -30,13 +30,13 @@ public class DLinkedList {
 
 		Node p = head;
 
-		if (head.next == null) { //head의 다음 노드가 없으면
-			System.out.println("D Linked List is Empty!"); //비었다고 메시지 출력
+		if (head.next == null) { 
+			System.out.println("D Linked List is Empty!");
 		} else {
 
-			for (p = head; p != null; p = p.next) {  // 걸어나아가는 p 노드 생성 후 끝까지 걸어나간다.
+			for (p = head; p != null; p = p.next) {  
 
-				if (x == (int) p.next.object ) { // 입력 받은 값 x 와 같다면 노드를 지우자
+				if (x == (int) p.next.object ) { 
 
 					p.next = p.next.next;
 					p = p.next.prev;
