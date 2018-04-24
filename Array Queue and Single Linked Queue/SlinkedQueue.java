@@ -96,7 +96,7 @@ public class SlinkedQueue implements Queue {
 	}
 
 	@Override
-	public void resize() { //링크드리스트에서는 쓰지않는다.
+	public void resize() {
 		// TODO Auto-generated method stub
 
 	}
