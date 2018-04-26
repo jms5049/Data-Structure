@@ -9,20 +9,17 @@ import java.util.StringTokenizer;
 
 public class Run {
 
-	/* 이름과 전화번호를 변수로 갖는 내부 클래스 */
 	class Person {
 		String name;
 		String phoneNumber;
 	}
 
-	private int linesCount; /* 읽어온 line 수 저장 */
-	private Person[] mPerson; /* 이름과 전화번호를 변수로 갖는 객체 배열 선언 */
-
-	/* 생성자 내에서 텍스트 파일을 읽어옴 */
+	private int linesCount;
+	private Person[] mPerson;
 
 	public Run(String fileName, int size) {
 
-		mPerson = new Person[size]; /* 객체 배열을 size만큼 할당함. */
+		mPerson = new Person[size];
 
 		try {
 			FileReader fr = new FileReader(fileName);
@@ -34,8 +31,6 @@ public class Run {
 			while (line != null) {
 				StringTokenizer parser = new StringTokenizer(line, " ");
 
-				/* txt파일의 내용을 읽어와서 객체 배열(mPerson)에 저장한다. */
-				/* 이름, 전화번호를 가져오기 위해서는 parser.nextToken()을 이용한다. */
 				while (parser.hasMoreTokens()) {
 					mPerson[linesCount] = new Person();
 
@@ -47,11 +42,10 @@ public class Run {
 			}
 
 			br.close();
-			System.out.println("주소록 읽기 성공.");
+			System.out.println("PhoneBook Loaded.");
 
 		} catch (FileNotFoundException e) {
-			/* txt파일이 존재하지 않을 경우 예외 처리 */
-			System.out.println("주소록 파일을 찾을 수 없습니다.");
+			System.out.println("PhoneBook Load Fail.");
 		} catch (IOException e) {
 		}
 	}
@@ -67,7 +61,7 @@ public class Run {
 		}
 		;
 
-		return "이름이 목록에 없습니다.";
+		return "Not in list.";
 	}
 
 	public void update(String name, String phoneNumber) {
@@ -77,10 +71,10 @@ public class Run {
 		for (int q = 0; q < linesCount; q++) {
 			if (name.equals(mPerson[q].name)) {
 
-				System.out.print("'" + mPerson[q].name + "'의 번호을(를)"
+				System.out.print("'" + mPerson[q].name + "'s number"
 						+ mPerson[q].phoneNumber + "->");
 				mPerson[q].phoneNumber = phoneNumber;
-				System.out.println(mPerson[q].phoneNumber + "(으)로 수정했습니다.");
+				System.out.println(mPerson[q].phoneNumber + "updated.");
 				isTrue = true;
 			}
 
@@ -90,7 +84,7 @@ public class Run {
 			mPerson[linesCount].name = name;
 			mPerson[linesCount].phoneNumber = phoneNumber;
 			System.out.println("'" + mPerson[linesCount].name + "' : "
-					+ mPerson[linesCount].phoneNumber + "을(를) 추가햇습니다");
+					+ mPerson[linesCount].phoneNumber + "is added");
 			linesCount++;
 		}
 
@@ -98,23 +92,17 @@ public class Run {
 
 	public void print_to_file() {
 		try {
-			/* fileName 에 쓰기 작업 */
 			FileWriter Fw = new FileWriter("PhoneBookOut.txt", false);
 
 			BufferedWriter bw = new BufferedWriter(Fw);
 
-			/* 반복문을 사용하여 객체 배열(mPerson)에 저장된 내용을 txt파일에 추가함. */
-
-			System.out.println("전화번호부를 출력합니다.");
+			System.out.println("Printing PhoneBook.");
 			for (int k = 0; k < linesCount; k++) {
 				bw.append(mPerson[k].name + " " + mPerson[k].phoneNumber);
 				bw.newLine();
 			}
 
-			/* 텍스트 파일 출력 */
 			bw.flush();
-
-			/* 파일 쓰기 객체를 닫음. */
 			bw.close();
 
 		} catch (IOException e) {
