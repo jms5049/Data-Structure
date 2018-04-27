@@ -23,25 +23,25 @@ public class TestSearch {
 	public static void performanceTest(Search mSearch, int size, int randomInt[], int testValue){
 		long startTime, endTime, elapsedTime;
 		
-		System.out.println("데이터 크기 : " + size + " / 찾으려는 값 : " + testValue);
+		System.out.println("Data Size : " + size + " / Value to Find : " + testValue);
 		
-		System.out.println("***** 선형 탐색 *****");
+		System.out.println("***** Linear Search *****");
 		startTime = System.nanoTime();
-		System.out.print("찾은 위치(index) : " + mSearch.linearSearch(randomInt, testValue)); 
+		System.out.print("Found At(index) : " + mSearch.linearSearch(randomInt, testValue)); 
 		endTime = System.nanoTime();
 		elapsedTime = endTime - startTime;
-		System.out.print(" / 비교 횟수 : " + mSearch.getLinearSearchCount());
-		System.out.println(" / 경과 시간 : " + elapsedTime / 1000000.0 + "ms");
+		System.out.print(" / No. of Comparison : " + mSearch.getLinearSearchCount());
+		System.out.println(" / Time Taken : " + elapsedTime / 1000000.0 + "ms");
 		
 		
-		System.out.println("***** 이진 탐색 *****");
+		System.out.println("***** Binary Search *****");
 		Arrays.sort(randomInt);
 		startTime = System.nanoTime();
-		System.out.print("찾은 위치(index) : " + mSearch.binarySearch(randomInt, testValue)); 
+		System.out.print("Found At(index) : " + mSearch.binarySearch(randomInt, testValue)); 
 		endTime = System.nanoTime();
 		elapsedTime = endTime - startTime;
-		System.out.print(" / 비교 횟수 : " + mSearch.getBinarySearchCount());
-		System.out.println(" / 경과 시간 : " + elapsedTime / 1000000.0 + "ms");
+		System.out.print(" / No. of Comparison : " + mSearch.getBinarySearchCount());
+		System.out.println(" / Time Taken : " + elapsedTime / 1000000.0 + "ms");
 	}
 
 	public static int[] generateRandomIntArray(int size){
