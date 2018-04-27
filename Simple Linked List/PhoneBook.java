@@ -17,8 +17,8 @@ public class PhoneBook {
 
 		public Person(String name, String phoneNumber, Person next) { // Person
 																		// 의 생성자
-			this.name = name; // 현재 클래스에 잇는 변수 name에다가 받아온 인자 값을 넣는다.
-			this.phoneNumber = phoneNumber; // 번호 인자 값을 넣는다.
+			this.name = name; 
+			this.phoneNumber = phoneNumber;
 			this.next = next;
 		}
 	}
@@ -48,7 +48,7 @@ public class PhoneBook {
 		int n = 1;
 		Person p = start;
 		System.out.println("");
-		System.out.println("전화번호를 출력합니다.");
+		System.out.println("Printing PhoneBook.");
 		while (p!= null) {
 			
 			System.out.println(n + " : " + p.name + " - " + p.phoneNumber);
