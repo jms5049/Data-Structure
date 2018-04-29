@@ -5,7 +5,7 @@ public class SlinkedQueue implements Queue {
 	private Node rear;
 	private int size = 0;
 
-	public class Node { // 메인에서 불러오려면 private static 말고 public으로 바까줌
+	public class Node {
 		Object price;
 		Object amount;
 		Node next;
@@ -74,12 +74,12 @@ public class SlinkedQueue implements Queue {
 		Node p = front;
 
 		if (front == null) {
-			System.out.print("품절");
+			System.out.print("Out of Stock");
 		} else {
-			System.out.print("[" + first().price + "원  :" + first().amount + "개]");
+			System.out.print("[" + first().price + "dollar  :" + first().amount + "amount]");
 			while (p.next != null) {
 
-				System.out.print("<--" + "[" + p.next.price + "원  :" + p.next.amount + "개]");
+				System.out.print("<--" + "[" + p.next.price + "dollar  :" + p.next.amount + "amount]");
 				p = p.next;
 			}
 
@@ -89,7 +89,7 @@ public class SlinkedQueue implements Queue {
 	}
 
 	@Override
-	public void resize() { // 링크드리스트에서는 쓰지않는다.
+	public void resize() {
 		// TODO Auto-generated method stub
 
 	}
