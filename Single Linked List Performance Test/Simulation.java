@@ -22,12 +22,12 @@ public class Simulation {
 		for (int i = 0; i < 100; i++) {
 			System.out.println("--------------- Time : " + i + " ---------------");
 			if (i == nextrandombuy) {
-				System.out.print("Bought (구매 정보 저장)\t| ");
+				System.out.print("Bought (info save)\t| ");
 				bought.add(random.nextInt(1500), random.nextInt(20));
 				nextrandombuy=i+randombuy.nextInt();
 			}
 			if (i == nextrandomsell) {
-				System.out.print("Sold (판매 정보 저장)		| ");
+				System.out.print("Sold (info save)		| ");
 				sold.add(random.nextInt(1500), random.nextInt(20));
 
 				buy = bought.first();
@@ -48,11 +48,11 @@ public class Simulation {
 								bought.first().amount = (int) bought.first().amount - (int) sell.amount;
 							}
 						}
-						System.out.print("Bought (판매 요청 이후)\t| ");
+						System.out.print("Bought (After Sale Request)\t| ");
 						bought.print();
-						System.out.print("Sold (판매 요청 이후)		| ");
+						System.out.print("Sold (After Sale Request)		| ");
 						sold.print();
-						System.out.println("Gains : " + gain + "원");
+						System.out.println("Gains : " + gain + "dollar");
 						buy = bought.first();
 						sell = sold.first();
 					}
