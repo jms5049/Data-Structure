@@ -6,8 +6,8 @@ public class BinaryTree {
 
 	public BinaryTree(Object root) {
 		this.root = root;
-		this.left = null; // 자식이 없는 empty tree
-		this.right = null; // 자식이 없는 empty tree
+		this.left = null; 
+		this.right = null;
 	}
 
 	public BinaryTree(Object root, BinaryTree left, BinaryTree right) {
@@ -19,6 +19,16 @@ public class BinaryTree {
 
 	public Object getRoot() {
 		return root;
+	}
+
+	public void postorder(BinaryTree tree) {
+		if (tree == null) {
+			return;
+		}
+		postorder(tree.left);
+		postorder(tree.right);
+		System.out.print(tree.root + " ");
+		
 	}
 
 }
