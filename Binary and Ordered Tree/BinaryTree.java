@@ -31,4 +31,14 @@ public class BinaryTree {
 		
 	}
 
+	public String toString() {
+		StringBuffer buf = new StringBuffer("[");
+		if (left != null)
+			buf.append(left + ",");
+		buf.append(root);
+		if (right != null)
+			buf.append("," + right);
+		return buf + "]";
+	}
+
 }
