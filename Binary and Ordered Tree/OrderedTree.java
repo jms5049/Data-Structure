@@ -27,6 +27,16 @@ public class OrderedTree {
 		}
 	}
 
+	public void postorder() {
+		for (Iterator it = subtrees.iterator(); it.hasNext();) {
+			// 서브트리를 반복하는 이터레이터 선언 후에, 자식이 있는 한 무한 루프를 돌린다
+			((OrderedTree) it.next()).postorder();
+			// 이터레이터를 사용하여 재귀함수 구현
+
+		}
+		System.out.print(root + " ");
+	}
+
 	public int size() {
 		return size;
 	}
