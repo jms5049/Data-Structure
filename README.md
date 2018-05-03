@@ -35,3 +35,7 @@ Set datas with exponetial random amount and test
 ### Array Queue and Array Stack
 
 Implement Queue and Stack using Array
+
+### Binary and Ordered Tree
+
+Build and Test each binary and ordered tree
