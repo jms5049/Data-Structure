@@ -33,7 +33,14 @@ public class BST {
 					this.right.insert(key);	//루트 노드보다 크고 루트 노드에 오른쪽 자식이 잇다면, 그 오른쪽 자식과 입력받은 key 값과 비교를 해서 어디에 넣을 지를 알아내기 위해 재귀함수를 쓴다.
 				}
 
-			} 
+			} else {	//오른쪽에 넣을 때와는 반대로 입력받은 key 값이 더 작을 경우이다.
+				if (this.left == null) {
+					this.left = new BST((Comparable) key);
+
+				} else {
+					this.left.insert(key);
+				}
+			}
 
 		}
 	}
