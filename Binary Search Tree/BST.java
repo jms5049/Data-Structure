@@ -25,15 +25,15 @@ public class BST {
 			this.key = (Comparable) key;
 
 		} else {
-			if (this.key.compareTo((Comparable) key) < 0) {	//입력받은 키값과 루트의 키값과 비교해서 입력받은 키값이 더 크다면
-				if (this.right == null) {	//만약 루트 노드의 오른쪽자식이 없다면
-					this.right = new BST((Comparable) key);	//입력받은 키 값을 가진 노드를 오른쪽 자식으로 붙여준다.
+			if (this.key.compareTo((Comparable) key) < 0) {
+				if (this.right == null) {
+					this.right = new BST((Comparable) key);
 
 				} else {
-					this.right.insert(key);	//루트 노드보다 크고 루트 노드에 오른쪽 자식이 잇다면, 그 오른쪽 자식과 입력받은 key 값과 비교를 해서 어디에 넣을 지를 알아내기 위해 재귀함수를 쓴다.
+					this.right.insert(key);	
 				}
 
-			} else {	//오른쪽에 넣을 때와는 반대로 입력받은 key 값이 더 작을 경우이다.
+			} else {
 				if (this.left == null) {
 					this.left = new BST((Comparable) key);
 
@@ -43,6 +43,30 @@ public class BST {
 			}
 
 		}
+	}
+	
+	public Object height(BST bst) {
+		if (bst == null) {	
+			return 0;
+		} else {	
+			if (bst.left != null) {	
+				leftSubtreeHeight++;	
+				height(bst.left);	
+			}
+			if (bst.right != null) {	
+				rightSubtreeHeight++;	
+				height(bst.right);	
+			}
+		}
+		
+		if (leftSubtreeHeight > rightSubtreeHeight){	
+			return leftSubtreeHeight;					
+		}
+		else{
+			return rightSubtreeHeight;
+		}
+
+
 	}
 
 }
