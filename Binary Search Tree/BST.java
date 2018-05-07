@@ -69,4 +69,15 @@ public class BST {
 
 	}
 
+	public void inorder(BST bst) {
+		if (bst == null) { 
+			return;
+		}
+		inorder(bst.left); 
+		System.out.print(bst.key + " ");	
+		inorder(bst.right);	
+
+	}
+
+
 }
