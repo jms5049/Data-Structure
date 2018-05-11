@@ -43,3 +43,7 @@ Build and Test each binary and ordered tree
 ### Binary Search Tree
 
 Simple Binary Search Tree
+
+### Graph using Adjacent Matrix
+
+Simple Graph impletemented by using Adjacent Matrix
