@@ -37,6 +37,23 @@ public class Graph {
 		return buf + "";
 	}
 
+	private String vertex(int i) {
+		StringBuffer buf = new StringBuffer(vertices[i] + " | ");
+		for (int j = 0; j < size; j++)
+			if (a[i][j] && a[i] != a[j])
+			{
+				
+				//buf.append(vertices[j]);
+				buf.append(true + "  ");
+				}
+			else
+			{
+				buf.append(false + " ");
+			}
+		return buf + "";
+	}
+
+
 
 	
 }
