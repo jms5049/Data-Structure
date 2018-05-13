@@ -22,5 +22,21 @@ public class Graph {
 		return a.length;
 	}
 
+	public String toString() {
+		
+		if (size == 0)
+			return "{}";
+		
+		StringBuffer buf = new StringBuffer(vertex(0));
+		for (int i = 1; i < size; i++)
+			
+			buf.append("\n"+vertex(i));
+		
+		
+		
+		return buf + "";
+	}
+
+
 	
 }
