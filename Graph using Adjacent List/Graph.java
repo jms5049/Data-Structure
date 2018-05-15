@@ -17,6 +17,36 @@ public class Graph {
 		}
 	}
 
+	public void add(String v, String w) {
+		int first;
+		int second;
+
+		first = index(v); 
+		second = index(w); 
+
+		for (int i = 0; i < size; i++) { 
+			if (i == first) { 
+				if (nodeArray[first].next == null) {
+					nodeArray[first].next = new Node(second, null); 
+					
+					if (nodeArray[second].next == null) { 
+						nodeArray[second].next = new Node(first, null);
+						nodeArray[second].next = new Node(first, nodeArray[second].next);
+					}
+				} else {
+					nodeArray[first].next = new Node(second, nodeArray[first].next);
+					if (nodeArray[second].next == null) {
+						nodeArray[second].next = new Node(first, null);
+					} else {
+						nodeArray[second].next = new Node(first, nodeArray[second].next);
+					}
+				}
+
+			}
+		}
+
+	}
+
 	private class Node {
 		int to;
 		Node next;
