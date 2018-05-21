@@ -46,4 +46,8 @@ Simple Binary Search Tree
 
 ### Graph using Adjacent Matrix
 
-Simple Graph impletemented by using Adjacent Matrix
+Simple Graph implemented by using Adjacent Matrix
+
+### Graph using Adjacent List
+
+Simple Graph implemented by using Adjacent List
