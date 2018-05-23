@@ -51,3 +51,8 @@ Simple Graph implemented by using Adjacent Matrix
 ### Graph using Adjacent List
 
 Simple Graph implemented by using Adjacent List
+
+### BFS and DFS
+
+Breadth First Search
+Depth First Search
