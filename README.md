@@ -64,3 +64,7 @@ Build MST with Kruskal
 ### Prim
 
 Build MST with Prim
+
+### Hashing
+
+Evaluate different Hashing Algo
