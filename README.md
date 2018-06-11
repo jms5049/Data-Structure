@@ -56,3 +56,7 @@ Simple Graph implemented by using Adjacent List
 
 Breadth First Search
 Depth First Search
+
+### Kruskal
+
+Build MST with Kruskal
