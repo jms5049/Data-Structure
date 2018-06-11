@@ -60,3 +60,7 @@ Depth First Search
 ### Kruskal
 
 Build MST with Kruskal
+
+### Prim
+
+Build MST with Prim
