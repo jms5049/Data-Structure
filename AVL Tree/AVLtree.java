@@ -80,5 +80,62 @@ public class AVLtree {
 		left = left.left;
 	}
 
-	
+	private AVLtree findMin(AVLtree key) {
+		
+		AVLtree Min = key.right;
+		AVLtree MinParent = key;
+		
+		while (Min.left != NIL) {
+			
+			MinParent = Min;
+			Min = Min.left;
+		}
+
+		if (Min == key.right)
+			
+			return Min;
+		
+		else if (Min != key.right) {
+			
+			MinParent.left = Min.right;
+			
+		}
+
+		return Min;
+	}
+
+	public AVLtree delete(int key) {
+		if (this == NIL)
+			return NIL;
+ 
+		else if (key < this.key)
+			left = left.delete(key); 
+		else
+			right = right.delete(key);
+
+		if (this.key == key) {
+			if (left == NIL && right == NIL)
+				return NIL;
+			
+			else if (left != NIL && right == NIL)
+				return this.left;
+
+			else if (left == NIL && right != NIL)
+				return this.right;
+			
+			else if (left != NIL && right != NIL) {
+				if (this.right.left == NIL)
+					return new AVLtree(findMin(this).key, this.left,right.right);
+				else{
+				this.key = findMin(this).key;
+				return this;
+				}	
+			}
+		}
+
+		rebalance();	
+		height = 1 + Math.max(left.height, right.height);
+		return this;
+	}
+
 }
