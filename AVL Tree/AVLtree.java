@@ -36,5 +36,49 @@ public class AVLtree {
 		return 1 + left.size() + right.size();
 	}
 
+	public String toString() {
+		if (this == NIL)
+			return "";
+		return left + " " + key + " " + right;
+	}
+
+	private AVLtree() { // constructs the empty tree
+		left = right = this;
+		height = -1;
+	}
+
+	private AVLtree(int key, AVLtree left, AVLtree right) {
+		this.key = key;
+		this.left = left;
+		this.right = right;
+		height = 1 + Math.max(left.height, right.height);
+	}
+
+	private void rebalance() {
+		if (right.height > left.height + 1) {
+			if (right.left.height > right.right.height)
+				right.rotateRight();
+			rotateLeft();
+		}
+
+		else if (left.height > right.height + 1) {
+			if (left.right.height > left.left.height)
+				left.rotateLeft();
+			rotateRight();
+		}
+	}
+
+	private void rotateLeft() {
+		left = new AVLtree(key, left, right.left);
+		key = right.key;
+		right = right.right;
+	}
+
+	private void rotateRight() {
+		right = new AVLtree(key, left.right, right);
+		key = left.key;
+		left = left.left;
+	}
+
 	
 }
