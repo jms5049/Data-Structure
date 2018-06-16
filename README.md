@@ -72,3 +72,7 @@ Evaluate different Hashing Algo
 ### AVL Tree
 
 Build and Evaluate AVL Tree
+
+## Huffman Code
+
+Read lines and encode into Huffman Code
