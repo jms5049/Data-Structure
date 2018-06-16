@@ -68,3 +68,7 @@ Build MST with Prim
 ### Hashing
 
 Evaluate different Hashing Algo
+
+### AVL Tree
+
+Build and Evaluate AVL Tree
