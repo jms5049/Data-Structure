@@ -76,3 +76,7 @@ Build and Evaluate AVL Tree
 ## Huffman Code
 
 Read lines and encode into Huffman Code
+
+## Deap
+
+Build Deap and Test
